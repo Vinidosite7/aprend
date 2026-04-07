@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Kit Alfa Kids — Seu filho aprendendo a ler em semanas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Nunito+Sans:wght@800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Nunito',sans-serif;background:#FFF8EE;color:#2D1B00;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none}
+:root{
+  --or:#FF6B1A;--ord:#D94E00;
+  --gr:#22C55E;--grd:#15803D;
+  --pu:#6C3FC5;--pud:#4A2799;
+  --ye:#FFD23F;
+  --cr:#FFF8EE;--cr2:#F5EDDE;--cr3:#EDE0CC;
+  --tx:#2D1B00;--tx2:#5A3E1B;--tx3:#8B6940;
+  --wh:#FFFFFF;--mx:480px
+}
+
+/* BARRA TOPO */
+.barra{background:linear-gradient(90deg,var(--pud),var(--pu));padding:12px 16px;text-align:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(74,39,153,.4)}
+.barra p{font-size:13px;font-weight:700;color:#fff;line-height:1.5}
+.barra strong{color:var(--ye)}
+#barra-data{font-style:italic;font-weight:600;font-size:12px;color:rgba(255,255,255,.9);display:block;margin-top:2px}
+
+/* HERO */
+.hero{background:var(--cr);padding:28px 20px 0;text-align:center}
+.logo{width:210px;margin:0 auto 22px;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 6px 18px rgba(108,63,197,.2))}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+.tag-pill{display:inline-flex;align-items:center;gap:6px;background:var(--gr);color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:18px}
+
+.h1{font-family:'Nunito',sans-serif;font-size:clamp(22px,5.5vw,32px);font-weight:900;line-height:1.25;color:var(--tx);max-width:var(--mx);margin:0 auto 14px}
+.h1 .mk{background:var(--or);color:#fff;padding:2px 8px;border-radius:6px;display:inline;font-weight:900}
+.sub{font-size:15px;font-weight:700;color:var(--tx2);max-width:400px;margin:0 auto 20px;line-height:1.65}
+.sub strong{color:var(--tx);font-weight:900}
+
+.faixa{background:var(--pu);border-radius:14px;padding:14px 16px;max-width:var(--mx);margin:0 auto 22px}
+.faixa p{color:#fff;font-size:13.5px;font-weight:700;line-height:1.55}
+.faixa em{background:var(--ye);color:var(--pud);font-style:normal;font-weight:900;padding:1px 7px;border-radius:4px}
+
+/* Mockup banner cadernos */
+.mockup-wrap{position:relative;max-width:var(--mx);margin:0 auto}
+.mockup-img{width:100%;border-radius:16px;filter:drop-shadow(0 16px 40px rgba(0,0,0,.18))}
+.badge-top{position:absolute;top:-10px;right:8px;background:var(--gr);color:#fff;font-size:10px;font-weight:800;padding:5px 13px;border-radius:100px;text-transform:uppercase;letter-spacing:.4px;box-shadow:0 4px 14px rgba(21,128,61,.4);animation:pulsar 2s ease-in-out infinite}
+@keyframes pulsar{0%,100%{box-shadow:0 4px 14px rgba(21,128,61,.4)}50%{box-shadow:0 4px 28px rgba(21,128,61,.7)}}
+
+/* CARD PREÇO */
+.card-preco{background:var(--wh);border:3px solid var(--or);border-radius:20px;padding:28px 20px 22px;max-width:var(--mx);margin:22px auto 0;position:relative;box-shadow:0 8px 32px rgba(255,107,26,.15)}
+.card-preco::before{content:'🔥 OFERTA ESPECIAL';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--or);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.4px}
+.preco-de{font-size:14px;color:#bbb;text-decoration:line-through;font-weight:700;margin-bottom:4px}
+.preco-por{display:flex;align-items:flex-start;justify-content:center;gap:2px;line-height:1;margin:4px 0 6px}
+.preco-rs{font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;color:var(--or);margin-top:14px}
+.preco-num{font-family:'Nunito',sans-serif;font-size:80px;font-weight:900;color:var(--or);letter-spacing:-2px}
+.preco-cents{font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;color:var(--or);margin-top:14px}
+.preco-obs{font-size:12px;color:var(--tx3);font-weight:700;margin-bottom:18px;line-height:1.55;text-align:center}
+
+.cont-linha{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,107,26,.07);border-radius:10px;padding:10px 14px;margin-bottom:16px}
+.dot{width:9px;height:9px;background:var(--gr);border-radius:50%;animation:blink 1.2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+.cont-txt{font-size:13px;font-weight:800;color:var(--tx)}
+.cont-num{color:var(--or)}
+
+.selos-linha{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--cr2)}
+.selo-i{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--tx3)}
+.selo-i .ico{font-size:16px}
+
+/* BOTÕES */
+.btn-gr{display:block;width:100%;background:linear-gradient(135deg,#28d36b,var(--grd));color:#fff;font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;padding:17px 16px;border-radius:16px;border:none;cursor:pointer;text-align:center;box-shadow:0 6px 24px rgba(21,128,61,.45);transition:transform .15s;position:relative;overflow:hidden;letter-spacing:.2px}
+.btn-gr::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:brilho 2.5s ease-in-out infinite}
+@keyframes brilho{0%{left:-100%}60%,100%{left:150%}}
+.btn-gr:active{transform:scale(.97)}
+.btn-sub{display:block;font-size:11.5px;font-weight:700;opacity:.9;margin-top:3px}
+.btn-ye{display:block;width:100%;background:linear-gradient(135deg,#FFE055,#F5B800);color:#3A1F00;font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;padding:17px 16px;border-radius:14px;border:none;cursor:pointer;text-align:center;box-shadow:0 6px 24px rgba(245,184,0,.4);transition:transform .15s;letter-spacing:.2px}
+.btn-ye:active{transform:scale(.97)}
+
+/* SEÇÕES */
+.sec{padding:44px 20px}
+.sec-wh{background:var(--wh)}
+.sec-cr{background:var(--cr)}
+.sec-cr2{background:var(--cr2)}
+
+.sec-h{font-family:'Nunito',sans-serif;font-size:clamp(20px,5vw,26px);font-weight:900;text-align:center;color:var(--tx);margin-bottom:28px;line-height:1.2}
+.sec-h span{color:var(--or)}
+
+/* BANNER COMO FUNCIONA */
+.banner-como{width:100%;max-width:var(--mx);margin:0 auto 24px;border-radius:14px;display:block}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:12px;max-width:var(--mx);margin:0 auto}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--cr);border-radius:14px;padding:16px 14px;border-left:4px solid var(--or)}
+.step-n{min-width:40px;height:40px;background:var(--or);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;flex-shrink:0}
+.step h3{font-size:15px;font-weight:900;margin-bottom:3px;color:var(--tx)}
+.step p{font-size:13px;color:var(--tx2);font-weight:700;line-height:1.55}
+
+/* MÓDULOS */
+.mods{display:flex;flex-direction:column;gap:14px;max-width:var(--mx);margin:0 auto}
+.mod{display:flex;gap:14px;align-items:center;background:var(--wh);border-radius:16px;padding:14px 16px;box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.mod img{width:82px;min-width:82px;border-radius:10px;object-fit:cover}
+.mod h3{font-size:14px;font-weight:900;color:var(--or);margin-bottom:4px;line-height:1.2;text-transform:uppercase;letter-spacing:.2px}
+.mod p{font-size:12.5px;color:var(--tx2);font-weight:700;line-height:1.5}
+
+/* BÔNUS */
+.bonus-intro{background:var(--pu);border-radius:14px;padding:16px;text-align:center;max-width:var(--mx);margin:0 auto 22px}
+.bonus-intro p{color:#fff;font-size:14px;font-weight:700;line-height:1.6}
+.bonus-intro strong{color:var(--ye);font-weight:900}
+.bonus-lista{display:flex;flex-direction:column;gap:14px;max-width:var(--mx);margin:0 auto}
+.bonus-item{display:flex;gap:14px;align-items:center;background:var(--wh);border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.bonus-item img{width:82px;min-width:82px;border-radius:10px;object-fit:cover}
+.bonus-item h3{font-size:13.5px;font-weight:900;color:var(--pu);margin-bottom:4px;text-transform:uppercase;letter-spacing:.2px}
+.bonus-item p{font-size:12.5px;color:var(--tx2);font-weight:700;line-height:1.5}
+.bonus-icon-box{min-width:82px;width:82px;height:82px;background:linear-gradient(135deg,var(--pu),var(--pud));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:38px;flex-shrink:0}
+
+/* OFERTA GRID */
+.oferta-grid{display:flex;flex-direction:column;gap:20px;max-width:var(--mx);margin:0 auto}
+.card-oferta{background:var(--wh);border-radius:20px;padding:26px 18px;box-shadow:0 6px 28px rgba(0,0,0,.1);position:relative;text-align:center}
+.card-oferta.dest{border:3px solid var(--pu)}
+.oferta-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;padding:4px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.3px}
+.tag-pu{background:var(--pu);color:#fff}
+.tag-or{background:var(--or);color:#fff}
+.oferta-titulo{font-size:20px;font-weight:900;color:var(--tx);margin-bottom:3px}
+.oferta-sub{font-size:12px;color:var(--tx3);font-weight:700;margin-bottom:16px}
+.oferta-de{font-size:13px;color:#bbb;text-decoration:line-through;font-weight:700;margin-bottom:4px}
+.oferta-preco{display:flex;align-items:flex-start;justify-content:center;gap:2px;line-height:1;margin:4px 0 14px;color:var(--pu)}
+.oferta-preco.or{color:var(--or)}
+.oferta-rs{font-size:20px;font-weight:900;margin-top:10px}
+.oferta-num{font-size:58px;font-weight:900;letter-spacing:-1px}
+.oferta-cents{font-size:20px;font-weight:900;margin-top:10px}
+.oferta-cl{list-style:none;text-align:left;margin-bottom:20px}
+.oferta-cl li{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--tx);padding:7px 0;border-bottom:1px solid var(--cr2)}
+.oferta-cl li:last-child{border-bottom:none}
+.ico-sim{color:var(--gr);font-size:15px;flex-shrink:0}
+.ico-nao{color:#ddd;font-size:15px;flex-shrink:0}
+
+/* DEPOIMENTOS */
+.dep-wrap{max-width:var(--mx);margin:0 auto;overflow:hidden;position:relative}
+.dep-track{display:flex;gap:12px;transition:transform .4s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.dep-slide{flex-shrink:0;width:calc(50% - 6px)}
+.dep-slide img{width:100%;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.15);display:block}
+.dep-ctrl{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:16px}
+.dep-dot{width:8px;height:8px;border-radius:50%;background:var(--cr3);border:none;cursor:pointer;padding:0;transition:all .25s}
+.dep-dot.ativo{background:var(--pu);width:22px;border-radius:4px}
+
+/* GARANTIA */
+.gar-box{max-width:var(--mx);margin:0 auto;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--gr);border-radius:20px;padding:28px 20px;text-align:center}
+.gar-ico{font-size:54px;margin-bottom:12px}
+.gar-box h2{font-size:22px;font-weight:900;color:var(--grd);margin-bottom:10px}
+.gar-box p{font-size:14px;color:#166534;font-weight:700;line-height:1.7}
+
+/* FAQ */
+.faq-lista{display:flex;flex-direction:column;gap:10px;max-width:var(--mx);margin:0 auto}
+.faq-item{background:var(--wh);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px;cursor:pointer;gap:10px;font-size:14px;font-weight:800;color:var(--tx);border:none;background:none;width:100%;text-align:left;line-height:1.4}
+.faq-q .ico{font-size:22px;min-width:22px;transition:transform .3s;color:var(--or);font-weight:900}
+.faq-item.aberto .faq-q .ico{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;font-size:13px;font-weight:700;color:var(--tx2);line-height:1.7;transition:max-height .35s ease,padding .35s ease;padding:0 16px}
+.faq-item.aberto .faq-a{max-height:300px;padding:0 16px 16px}
+
+.regras{max-width:var(--mx);margin:22px auto 0;background:rgba(255,107,26,.08);border-left:4px solid var(--or);border-radius:12px;padding:16px}
+.regras h4{font-size:14px;font-weight:900;color:var(--or);margin-bottom:6px}
+.regras p{font-size:12.5px;font-weight:700;color:var(--tx2);line-height:1.7}
+
+/* CTA FINAL */
+.sec-cta{background:linear-gradient(135deg,var(--or),var(--ord));padding:48px 20px;text-align:center;position:relative;overflow:hidden}
+.sec-cta::before{content:'';position:absolute;top:-50px;left:-50px;width:200px;height:200px;background:rgba(255,255,255,.07);border-radius:50%}
+.sec-cta::after{content:'';position:absolute;bottom:-40px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%}
+.cta-h2{font-size:clamp(21px,5vw,27px);font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;position:relative;z-index:1}
+.cta-sub{font-size:13.5px;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:20px;line-height:1.55;position:relative;z-index:1}
+.cta-de{font-size:13px;color:rgba(255,255,255,.65);text-decoration:line-through;font-weight:700;position:relative;z-index:1}
+.cta-preco{display:flex;align-items:flex-start;justify-content:center;gap:2px;line-height:1;margin:6px 0 24px;position:relative;z-index:1}
+.cta-rs{font-size:28px;font-weight:900;color:var(--ye);margin-top:16px}
+.cta-num{font-size:84px;font-weight:900;color:var(--ye);letter-spacing:-3px}
+.cta-cents{font-size:28px;font-weight:900;color:var(--ye);margin-top:16px}
+.btn-final{display:block;width:100%;max-width:var(--mx);margin:0 auto;background:#fff;color:var(--ord);font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;padding:18px 16px;border-radius:16px;border:none;cursor:pointer;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.2);transition:transform .15s;position:relative;z-index:1}
+.btn-final:active{transform:scale(.97)}
+.selos-final{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1}
+.selo-f{display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,.88)}
+.selo-f-ico{font-size:28px}
+.selo-f-txt{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;text-align:center;max-width:72px;line-height:1.3}
+
+/* FOOTER */
+footer{background:#1A0E00;padding:24px 20px;text-align:center}
+footer p{font-size:11px;color:rgba(255,255,255,.35);line-height:2}
+footer a{color:rgba(255,255,255,.3);text-decoration:underline}
+
+/* POPUP */
+.popup-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:999;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
+.popup-ov.ativo{display:flex;animation:fadeOv .3s ease}
+@keyframes fadeOv{from{opacity:0}to{opacity:1}}
+.popup-box{background:var(--cr);border-radius:24px 24px 0 0;padding:28px 20px 44px;width:100%;max-width:520px;max-height:93vh;overflow-y:auto;position:relative;animation:slideUp .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.pop-fechar{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.08);border:none;cursor:pointer;font-size:18px;color:#777;display:flex;align-items:center;justify-content:center}
+.pop-tag{display:inline-block;background:var(--or);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.pop-h2{font-size:22px;font-weight:900;color:var(--tx);margin-bottom:6px;line-height:1.2}
+.pop-sub{font-size:13px;color:var(--tx2);font-weight:700;margin-bottom:16px;line-height:1.55}
+.timer-wrap{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+.timer-bloco{background:var(--pu);border-radius:10px;padding:10px 16px;text-align:center;min-width:64px}
+.timer-n{font-size:32px;font-weight:900;color:#fff;line-height:1;display:block}
+.timer-l{font-size:10px;color:rgba(255,255,255,.7);font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.timer-sep{font-size:32px;font-weight:900;color:var(--pu);align-self:center;margin-bottom:14px}
+.pop-cl{list-style:none;margin-bottom:18px}
+.pop-cl li{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--tx);padding:8px 0;border-bottom:1px solid var(--cr2)}
+.pop-cl li:last-child{border-bottom:none}
+.pck{width:24px;height:24px;min-width:24px;background:var(--gr);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0}
+.pop-preco-box{background:linear-gradient(135deg,var(--pud),var(--pu));border-radius:16px;padding:20px;text-align:center;margin-bottom:14px}
+.pop-de{font-size:13px;color:rgba(255,255,255,.55);text-decoration:line-through;font-weight:700;margin-bottom:4px}
+.pop-preco{display:flex;align-items:flex-start;justify-content:center;gap:2px;line-height:1;margin-bottom:6px}
+.pop-rs{font-size:22px;font-weight:900;color:var(--ye);margin-top:10px}
+.pop-num{font-size:64px;font-weight:900;color:var(--ye);letter-spacing:-2px}
+.pop-cents{font-size:22px;font-weight:900;color:var(--ye);margin-top:10px}
+.pop-obs{font-size:12px;color:rgba(255,255,255,.72);font-weight:700}
+.btn-pop-sim{display:block;width:100%;background:linear-gradient(135deg,#28d36b,var(--grd));color:#fff;font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;padding:17px 16px;border-radius:14px;border:none;cursor:pointer;text-align:center;box-shadow:0 6px 22px rgba(21,128,61,.45);transition:transform .15s;margin-bottom:12px;text-decoration:none}
+.btn-pop-sim:active{transform:scale(.97)}
+.btn-pop-nao{display:block;width:100%;text-align:center;font-size:13px;font-weight:700;color:#aaa;text-decoration:underline;cursor:pointer;background:none;border:none;padding:8px}
+</style>
+</head>
+<body>
+
+<!-- BARRA TOPO -->
+<div class="barra">
+  <p>📚 Reforço escolar, alfabetização e sala de aula.
+    <strong id="barra-data">Hoje é o último dia para aproveitar o desconto de 60%!</strong>
+  </p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- LOGO -->
+  <img class="logo" src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/RBPgtQ5755033.png" alt="Turminha Alfa Kids"/>
+
+  <div class="tag-pill">✅ Atividades de acordo com a BNCC</div>
+
+  <h1 class="h1">
+    Está cansado(a) de ver seu filho com
+    <span class="mk">DIFICULDADE PARA APRENDER A LER E ESCREVER...</span>
+    E não sabe por onde começar para ajudá-lo?
+  </h1>
+
+  <p class="sub">
+    <strong>EXISTE UM CAMINHO SIMPLES, PRÁTICO E EFICAZ</strong><br>
+    mesmo para quem não é professor!
+  </p>
+
+  <div class="faixa">
+    <p>O Kit Alfa Kids possui <em>+ de 2.750 atividades práticas</em> focadas na alfabetização acelerada! Desenvolvido por Professores Especialistas em Desenvolvimento infantil.</p>
+  </div>
+
+  <!-- BANNER CADERNOS (mockup do kit) -->
+  <div class="mockup-wrap">
+    <span class="badge-top">✅ Aprovado BNCC</span>
+    <img class="mockup-img" src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/GFdSjP5752479.png" alt="Kit Alfa Kids — cadernos de atividades"/>
+  </div>
+
+  <!-- CARD PREÇO -->
+  <div class="card-preco">
+    <p class="preco-de">De: R$57,00</p>
+    <div class="preco-por">
+      <span class="preco-rs">R$</span>
+      <span class="preco-num">1</span>
+      <span class="preco-cents">,99</span>
+    </div>
+    <p class="preco-obs">Acesso imediato · +2.750 atividades em PDF<br>Para alfabetização completa, TDAH, Especiais, Coordenação, matemática, português, frases e textos, sílabas, Jogos e muito mais...</p>
+
+    <div class="cont-linha">
+      <div class="dot"></div>
+      <p class="cont-txt"><span class="cont-num" id="contador">621</span> pessoas estão acessando esta oferta!</p>
+    </div>
+
+    <a href="#" class="btn-gr" id="btn-hero">
+      QUERO ADQUIRIR MEU KIT AGORA!
+      <span class="btn-sub">👆 Clique e acesse em minutos</span>
+    </a>
+
+    <div class="selos-linha">
+      <div class="selo-i"><span class="ico">🔒</span> Pagamento Seguro</div>
+      <div class="selo-i"><span class="ico">⚡</span> Acesso Imediato</div>
+      <div class="selo-i"><span class="ico">🛡️</span> 7 dias Garantia</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec sec-wh">
+  <h2 class="sec-h">Como <span>Funciona?</span></h2>
+  <!-- Banner PDF -->
+  <img class="banner-como" src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/nJvbph9561501.webp" alt="O KIT ALFA KIDS CHEGA EM SEU E-MAIL E WHATSAPP EM FORMATO PDF" loading="lazy"/>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><h3>Compra rápida e segura</h3><p>Pagamento via PIX ou Cartão de Crédito pela plataforma Pepper. Aprovação na hora.</p></div></div>
+    <div class="step"><div class="step-n">2</div><div><h3>Receba no e-mail e WhatsApp</h3><p>O conteúdo é 100% digital e chega imediatamente após a confirmação do pagamento.</p></div></div>
+    <div class="step"><div class="step-n">3</div><div><h3>Imprima ou use no celular</h3><p>Baixe os PDFs e imprima normalmente, ou use direto no celular ou tablet. Sem complicação.</p></div></div>
+    <div class="step"><div class="step-n">4</div><div><h3>Seu filho começa hoje</h3><p>Atividades progressivas para crianças de 2 a 11 anos. TDAH, Especiais, Coordenação e muito mais.</p></div></div>
+  </div>
+</section>
+
+<!-- O QUE VEM NO KIT -->
+<section class="sec sec-cr">
+  <h2 class="sec-h">O que vem no <span>Kit?</span></h2>
+  <div class="mods">
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/LpIYHg5332279.png" alt="Matemática" loading="lazy"/>
+      <div><h3>Matemática</h3><p>Atividades de matemática básica alinhadas ao desenvolvimento lógico e ao processo de alfabetização.</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/yvpyyl0744452.webp" alt="Sílabas" loading="lazy"/>
+      <div><h3>Sílabas Simples e Complexas</h3><p>As sílabas simples e complexas são essenciais para a alfabetização e estão no Kit Alfa Kids.</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/ylakDY0854798.webp" alt="Coordenação Motora" loading="lazy"/>
+      <div><h3>Coordenação Motora Fina</h3><p>Vamos reforçar constantemente esta habilidade importantíssima para a escrita.</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/biyyeY8062847.png" alt="Vogais" loading="lazy"/>
+      <div><h3>Vogais e Consciência Fonológica</h3><p>Iniciamos o processo de alfabetização com a consciência fonológica e reconhecimento das vogais!</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/SSLPun8363246.png" alt="Consoantes" loading="lazy"/>
+      <div><h3>Consoantes</h3><p>Vamos trabalhar todas as consoantes do alfabeto, na forma bastão (caixa alta) e cursiva (script).</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/EJsbav8505543.png" alt="Fonemas e Grafemas" loading="lazy"/>
+      <div><h3>Fonemas e Grafemas</h3><p>O som e o símbolo das letras, sílabas e palavras!</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/yKnjEr9102505.png" alt="Silabário" loading="lazy"/>
+      <div><h3>Silabário e Seus Fonemas</h3><p>Vamos aprender as sílabas através dos sons de forma lúdica e super colorida.</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/QjebqJ9468756.png" alt="Formando Palavras" loading="lazy"/>
+      <div><h3>Formando as Palavras</h3><p>Vamos aprender palavras-chave para a alfabetização! Sua criança vai aprender a ler.</p></div>
+    </div>
+    <div class="mod">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/qjNDuh7278289.png" alt="Caligrafia" loading="lazy"/>
+      <div><h3>Letras Bastão e Cursiva</h3><p>As letras Bastão e Cursiva são as mais utilizadas no processo de alfabetização — nosso kit contém as duas formas!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="sec sec-wh">
+  <h2 class="sec-h">🎁 <span>Bônus</span> Exclusivos</h2>
+  <div class="bonus-intro">
+    <p>Adquirindo o Kit Turminha Alfa Kids Completo <strong>HOJE</strong> você terá acesso a <strong>5 bônus exclusivos</strong> que vão potencializar ainda mais o aprendizado!</p>
+  </div>
+  <div class="bonus-lista">
+    <div class="bonus-item">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/ByDSye7897678.png" alt="Apostila Português" loading="lazy"/>
+      <div><h3>Bônus 1: Apostila de Português</h3><p>Receba de bônus a Apostila de Português completa, para reforçar a habilidade mais importante da alfabetização.</p></div>
+    </div>
+    <div class="bonus-item">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/vFYIkM8094705.png" alt="Frases e Textos" loading="lazy"/>
+      <div><h3>Bônus 2: Apostila de Frases e Textos</h3><p>Você também recebe um kit de desenvolvimento de frases e textos — o melhor para o desenvolvimento na alfabetização!</p></div>
+    </div>
+    <div class="bonus-item">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/rafqrv8269434.png" alt="Jogos Didáticos" loading="lazy"/>
+      <div><h3>Bônus 3: Jogos Didáticos</h3><p>Receba de bônus jogos didáticos para um aprendizado divertido. Murais e jogos alfabéticos que potencializam o aprendizado!</p></div>
+    </div>
+    <div class="bonus-item">
+      <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/NbmYvu8858576.png" alt="Grupo VIP" loading="lazy"/>
+      <div><h3>Bônus 4: Grupo VIP do WhatsApp</h3><p>Receba conteúdos e atividades gratuitas todas as semanas direto no seu WhatsApp.</p></div>
+    </div>
+    <div class="bonus-item">
+      <div class="bonus-icon-box">🎁</div>
+      <div><h3>Bônus 5: Surpresa Especial</h3><p>Um bônus surpresa revelado após a compra. Desenvolvido especialmente para completar o processo de alfabetização!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOLHA A OFERTA -->
+<section class="sec sec-cr2">
+  <h2 class="sec-h">Escolha a <span>Melhor Oferta:</span></h2>
+  <div class="oferta-grid">
+    <!-- PLANO COMPLETO -->
+    <div class="card-oferta dest">
+      <span class="oferta-tag tag-pu">⭐ Recomendado por Psicopedagogos</span>
+      <p class="oferta-titulo">PLANO COMPLETO!</p>
+      <p class="oferta-sub">Kit Recomendado por Psicopedagogos</p>
+      <p class="oferta-de">de R$97,00</p>
+      <div class="oferta-preco">
+        <span class="oferta-rs">R$</span>
+        <span class="oferta-num">16</span>
+        <span class="oferta-cents">,98</span>
+      </div>
+      <ul class="oferta-cl">
+        <li><span class="ico-sim">✅</span>Kit Alfa Kids — +2.750 Atividades</li>
+        <li><span class="ico-sim">✅</span>Matemática</li>
+        <li><span class="ico-sim">✅</span>Sílabas Simples e Complexas</li>
+        <li><span class="ico-sim">✅</span>Coordenação Motora</li>
+        <li><span class="ico-sim">✅</span>Vogais e Consciência Fonológica</li>
+        <li><span class="ico-sim">✅</span>Consoantes</li>
+        <li><span class="ico-sim">✅</span>Fonemas e Grafemas</li>
+        <li><span class="ico-sim">✅</span>Silabário e seus Fonemas</li>
+        <li><span class="ico-sim">✅</span>Formando Palavras</li>
+        <li><span class="ico-sim">✅</span>Caligrafia Inicial</li>
+        <li><span class="ico-sim">✅</span>Bônus 01 — Apostila de Português</li>
+        <li><span class="ico-sim">✅</span>Bônus 02 — Frases e Textos</li>
+        <li><span class="ico-sim">✅</span>Bônus 03 — Jogos Didáticos</li>
+        <li><span class="ico-sim">✅</span>Bônus 04 — Grupo VIP de Atividades</li>
+        <li><span class="ico-sim">✅</span>Bônus 05 — Surpresa Especial</li>
+        <li><span class="ico-sim">✅</span>Acesso Vitalício</li>
+      </ul>
+      <a href="LINK_CHECKOUT_1698" class="btn-ye">⭐ Quero Aproveitar O Pacote Completo!!</a>
+    </div>
+    <!-- BÁSICO -->
+    <div class="card-oferta">
+      <span class="oferta-tag tag-or">Oferta Básica!</span>
+      <p class="oferta-titulo">OFERTA BÁSICA</p>
+      <p class="oferta-sub">Introdução à Alfabetização</p>
+      <p class="oferta-de">de R$57,00</p>
+      <div class="oferta-preco or">
+        <span class="oferta-rs">R$</span>
+        <span class="oferta-num">1</span>
+        <span class="oferta-cents">,99</span>
+      </div>
+      <ul class="oferta-cl">
+        <li><span class="ico-sim">✅</span>Kit — 250 Atividades de Alfabetização</li>
+        <li><span class="ico-nao">❌</span><span style="color:#ccc">Todos os Bônus</span></li>
+        <li><span class="ico-nao">❌</span><span style="color:#ccc">Grupo de Atividades</span></li>
+        <li><span class="ico-nao">❌</span><span style="color:#ccc">Atualizações de atividades</span></li>
+        <li><span class="ico-nao">❌</span><span style="color:#ccc">Acesso vitalício</span></li>
+      </ul>
+      <a href="#" class="btn-gr" id="btn-basico">
+        Adquirir o Kit Básico
+        <span class="btn-sub">por R$1,99</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec sec-cr">
+  <h2 class="sec-h">💬 <span>Depoimentos:</span></h2>
+  <div class="dep-wrap">
+    <div class="dep-track" id="dep-track">
+      <div class="dep-slide"><img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/DwXbao9009471.avif" alt="Depoimento 1" loading="lazy"/></div>
+      <div class="dep-slide"><img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/JgqNrd8905423.avif" alt="Depoimento 2" loading="lazy"/></div>
+      <div class="dep-slide"><img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/PvMuff9024042.avif" alt="Depoimento 3" loading="lazy"/></div>
+      <div class="dep-slide"><img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/bCLPLX8996678.avif" alt="Depoimento 4" loading="lazy"/></div>
+    </div>
+  </div>
+  <div class="dep-ctrl" id="dep-ctrl">
+    <button class="dep-dot ativo" data-i="0"></button>
+    <button class="dep-dot" data-i="1"></button>
+    <button class="dep-dot" data-i="2"></button>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec sec-wh">
+  <div class="gar-box">
+    <div class="gar-ico">🛡️</div>
+    <h2>SATISFAÇÃO GARANTIDA!</h2>
+    <p>GARANTA A APOSTILA DE ALFABETIZAÇÃO COM DESCONTO, ENQUANTO AINDA ESTÁ DISPONÍVEL!<br><br>
+    Sabemos da qualidade do nosso material de Alfabetização, e por este motivo liberamos a <strong>garantia de 7 dias!</strong> Se neste período você utilizar nosso material e não gostar, basta entrar em contato para pedir o reembolso de 100% do valor investido!</p>
+  </div>
+</section>
+
+<!-- IMG FINAL KIT -->
+<div style="background:var(--cr2);line-height:0">
+  <img src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/cWdmwa9676985.webp" alt="Kit Alfa Kids completo" style="width:100%;max-width:var(--mx);margin:0 auto;display:block" loading="lazy"/>
+</div>
+
+<!-- FAQ -->
+<section class="sec sec-cr2">
+  <h2 class="sec-h">Perguntas <span>Frequentes</span></h2>
+  <div class="faq-lista">
+    <div class="faq-item">
+      <button class="faq-q"><span>1 — Como a apostila é entregue?</span><span class="ico">+</span></button>
+      <div class="faq-a">A apostila de Alfabetização é 100% digital. Enviamos os dados de acesso através do seu e-mail. Você vai acessar o link e baixar o conteúdo em seu computador ou celular. Para realizar a impressão, basta fazer normalmente como qualquer arquivo PDF.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>2 — Posso parcelar?</span><span class="ico">+</span></button>
+      <div class="faq-a">Sim! Aceitamos cartão de crédito (parcelado), PIX e boleto bancário. O pagamento é feito de forma segura pela plataforma Pepper.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>3 — Para qual idade é a apostila?</span><span class="ico">+</span></button>
+      <div class="faq-a">A Apostila de Alfabetização pode ser utilizada por crianças de 2 a 11 anos (período de alfabetização ou pré-alfabetização).</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>4 — Como comprar a apostila?</span><span class="ico">+</span></button>
+      <div class="faq-a">Para comprar com pagamento via PIX ou Cartão de Crédito, basta clicar em qualquer botão desta página! Todo o pagamento é seguro, através da plataforma Pepper.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>5 — A apostila está de acordo com a BNCC?</span><span class="ico">+</span></button>
+      <div class="faq-a">Sim. Todas as atividades da Apostila estão de acordo com a BNCC. Sua criança será nivelada no nível nacional, seguindo as recomendações e diretrizes do Ministério da Educação.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>6 — Serve para crianças com dificuldades de aprendizagem?</span><span class="ico">+</span></button>
+      <div class="faq-a">Sim. Todo nosso material foi desenvolvido para atender crianças com ou sem dificuldades de aprendizagem. Temos centenas de casos de sucesso com crianças Autistas, SD, Dislexia, TDA e TDAH.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>7 — Regras da Promoção!</span><span class="ico">+</span></button>
+      <div class="faq-a">São liberadas 30 unidades por R$1,99 por dia, como forma de ajudar vocês e divulgarmos mais nosso trabalho! No entanto, após as 30 vendas do dia, o valor sobe. Não conseguimos manter mais unidades, pois temos custos de anúncios.</div>
+    </div>
+  </div>
+  <div class="regras">
+    <h4>⚠️ Atenção — Oferta Limitada</h4>
+    <p>São apenas 30 unidades por R$1,99 disponíveis por dia. Após esgotarem, o valor retorna ao preço original. Garanta agora enquanto ainda está disponível!</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="sec-cta">
+  <h2 class="cta-h2">Não deixe seu filho esperar mais um dia</h2>
+  <p class="cta-sub">Acesso imediato. Mais de 2.750 atividades no seu celular em minutos.<br>Para 2 a 11 anos · TDAH · Especiais · BNCC</p>
+  <p class="cta-de">De R$57,00</p>
+  <div class="cta-preco">
+    <span class="cta-rs">R$</span>
+    <span class="cta-num">1</span>
+    <span class="cta-cents">,99</span>
+  </div>
+  <a href="#" class="btn-final" id="btn-cta-final">🚀 QUERO ADQUIRIR MEU KIT AGORA!</a>
+  <div class="selos-final">
+    <div class="selo-f"><span class="selo-f-ico">🔒</span><span class="selo-f-txt">Pagamento Seguro</span></div>
+    <div class="selo-f"><span class="selo-f-ico">⚡</span><span class="selo-f-txt">Acesso Imediato</span></div>
+    <div class="selo-f"><span class="selo-f-ico">🛡️</span><span class="selo-f-txt">Garantia 7 Dias</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>Copyright 2025 - Turminha Alfa Kids ® · Todos os direitos reservados.<br>
+  Este site não é afiliado ao Facebook ou Instagram.<br>
+  <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a></p>
+</footer>
+
+<!-- POPUP UPSELL -->
+<div class="popup-ov" id="popup-ov">
+  <div class="popup-box">
+    <button class="pop-fechar" id="pop-fechar">×</button>
+    <span class="pop-tag">🔥 DESCONTO LIBERADO!!!</span>
+    <h2 class="pop-h2">PLANO COMPLETO!<br>Kit Recomendado por Psicopedagogos</h2>
+    <p class="pop-sub">Antes de continuar com o básico — aproveite o pacote completo por um preço exclusivo. Essa oferta expira em:</p>
+    <div class="timer-wrap">
+      <div class="timer-bloco"><span class="timer-n" id="t-min">10</span><span class="timer-l">min</span></div>
+      <span class="timer-sep">:</span>
+      <div class="timer-bloco"><span class="timer-n" id="t-seg">00</span><span class="timer-l">seg</span></div>
+    </div>
+    <ul class="pop-cl">
+      <li><div class="pck">✓</div>Kit Alfa Kids — +2.750 Atividades</li>
+      <li><div class="pck">✓</div>Matemática</li>
+      <li><div class="pck">✓</div>Sílabas Simples e Complexas</li>
+      <li><div class="pck">✓</div>Coordenação Motora</li>
+      <li><div class="pck">✓</div>Vogais e Consciência Fonológica</li>
+      <li><div class="pck">✓</div>Consoantes</li>
+      <li><div class="pck">✓</div>Fonemas e Grafemas</li>
+      <li><div class="pck">✓</div>Silabário e seus Fonemas</li>
+      <li><div class="pck">✓</div>Formando Palavras</li>
+      <li><div class="pck">✓</div>Caligrafia Inicial</li>
+      <li><div class="pck">✓</div>🎁 Bônus 01 — Apostila de Português</li>
+      <li><div class="pck">✓</div>🎁 Bônus 02 — Frases e Textos</li>
+      <li><div class="pck">✓</div>🎁 Bônus 03 — Jogos Didáticos</li>
+      <li><div class="pck">✓</div>🎁 Bônus 04 — Grupo VIP de Atividades</li>
+      <li><div class="pck">✓</div>🎁 Bônus 05 — Surpresa Especial</li>
+      <li><div class="pck">✓</div>♾️ Acesso Vitalício</li>
+    </ul>
+    <div class="pop-preco-box">
+      <p class="pop-de">de R$97,00</p>
+      <div class="pop-preco">
+        <span class="pop-rs">R$</span>
+        <span class="pop-num">9</span>
+        <span class="pop-cents">,99</span>
+      </div>
+      <p class="pop-obs">Pagamento único · Acesso imediato</p>
+    </div>
+    <a href="LINK_CHECKOUT_999" class="btn-pop-sim">✅ Quero Aproveitar O Pacote Completo!!</a>
+    <button class="btn-pop-nao" id="btn-pop-nao">Quero Apenas o Básico!</button>
+  </div>
+</div>
+
+<script>
+// DATA DINÂMICA
+const dias=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const h=new Date();
+document.getElementById('barra-data').textContent='Hoje, '+dias[h.getDay()]+', '+h.getDate()+' de '+meses[h.getMonth()]+' de '+h.getFullYear()+' é o último dia para aproveitar o desconto de 60%!';
+
+// CONTADOR
+let c=Math.floor(Math.random()*80)+580;
+const cel=document.getElementById('contador');
+setInterval(function(){c+=Math.floor(Math.random()*5)-1;c=Math.max(550,c);cel.textContent=c;},4000);
+
+// DEPOIMENTOS SWIPER (mostra 2 por vez)
+var track=document.getElementById('dep-track');
+var dots=document.querySelectorAll('.dep-dot');
+var idx=0,startX=0;
+function goTo(i){
+  idx=Math.max(0,Math.min(i,2));
+  var sw=track.querySelector('.dep-slide').offsetWidth+12;
+  track.style.transform='translateX(-'+(idx*sw)+'px)';
+  dots.forEach(function(d,j){d.classList.toggle('ativo',j===idx);});
+}
+dots.forEach(function(d){d.addEventListener('click',function(){goTo(+d.dataset.i);});});
+track.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;},{passive:true});
+track.addEventListener('touchend',function(e){
+  var dx=e.changedTouches[0].clientX-startX;
+  if(dx<-40)goTo(idx+1);
+  else if(dx>40)goTo(idx-1);
+});
+setInterval(function(){goTo((idx+1)%3);},4500);
+
+// POPUP
+var ov=document.getElementById('popup-ov');
+var timerInv;
+function abrirPopup(e){if(e)e.preventDefault();ov.classList.add('ativo');document.body.style.overflow='hidden';iniciarTimer();}
+function fecharPopup(){ov.classList.remove('ativo');document.body.style.overflow='';clearInterval(timerInv);}
+document.getElementById('btn-hero').addEventListener('click',abrirPopup);
+document.getElementById('btn-basico').addEventListener('click',abrirPopup);
+document.getElementById('btn-cta-final').addEventListener('click',abrirPopup);
+document.getElementById('pop-fechar').addEventListener('click',fecharPopup);
+document.getElementById('btn-pop-nao').addEventListener('click',function(){fecharPopup();window.location.href='/esgotada/';});
+ov.addEventListener('click',function(e){if(e.target===ov)fecharPopup();});
+function iniciarTimer(){
+  clearInterval(timerInv);var total=600;
+  var mEl=document.getElementById('t-min'),sEl=document.getElementById('t-seg');
+  timerInv=setInterval(function(){
+    if(total<=0){clearInterval(timerInv);return;}
+    total--;
+    mEl.textContent=String(Math.floor(total/60)).padStart(2,'0');
+    sEl.textContent=String(total%60).padStart(2,'0');
+  },1000);
+}
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement;
+    var ab=item.classList.contains('aberto');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('aberto');});
+    if(!ab)item.classList.add('aberto');
+  });
+});
+</script>
+</body>
+</html>

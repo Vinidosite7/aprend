@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Oferta Encerrada — Kit Alfa Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Nunito',sans-serif;background:#FFF8EE;color:#2D1B00;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none}
+:root{
+  --or:#FF6B1A;--ord:#D94E00;
+  --gr:#22C55E;--grd:#15803D;
+  --pu:#6C3FC5;--pud:#4A2799;
+  --ye:#FFD23F;
+  --rd:#EF4444;
+  --cr:#FFF8EE;--cr2:#F5EDDE;
+  --tx:#2D1B00;--tx2:#5A3E1B;--tx3:#8B6940;
+  --wh:#FFFFFF;--mx:480px
+}
+
+.barra-rd{background:var(--rd);padding:12px 16px;text-align:center}
+.barra-rd p{font-size:13px;font-weight:800;color:#fff;line-height:1.5}
+
+.hero{background:var(--cr);padding:28px 20px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(239,68,68,.03) 18px,rgba(239,68,68,.03) 36px);pointer-events:none}
+.logo{width:190px;margin:0 auto 20px;filter:drop-shadow(0 4px 14px rgba(108,63,197,.2));position:relative;z-index:1}
+
+.badge-esg{display:inline-flex;align-items:center;gap:8px;background:var(--rd);color:#fff;font-size:16px;font-weight:900;padding:10px 20px;border-radius:14px;margin-bottom:18px;box-shadow:0 4px 20px rgba(239,68,68,.35);animation:shake .5s ease-in-out;position:relative;z-index:1}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.h1{font-size:clamp(22px,5.5vw,30px);font-weight:900;line-height:1.25;color:var(--tx);max-width:var(--mx);margin:0 auto 12px;position:relative;z-index:1}
+.h1 .rd{color:var(--rd)}
+.sub{font-size:14.5px;font-weight:700;color:var(--tx2);max-width:420px;margin:0 auto 22px;line-height:1.65;position:relative;z-index:1}
+.sub strong{color:var(--tx);font-weight:900}
+
+.sep{display:flex;align-items:center;gap:12px;max-width:var(--mx);margin:0 auto 22px;position:relative;z-index:1}
+.sep-l{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--or),transparent)}
+.sep-txt{font-size:11px;font-weight:900;color:var(--or);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+
+.card-comp{background:var(--wh);border-radius:24px;padding:28px 20px;max-width:var(--mx);margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,.12);border-top:5px solid var(--or);position:relative;z-index:1}
+.card-comp::before{content:'🎁 COMPENSAÇÃO ESPECIAL';position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--or);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.4px}
+.comp-tag{display:inline-block;background:rgba(108,63,197,.1);color:var(--pu);font-size:11px;font-weight:800;padding:4px 12px;border-radius:100px;letter-spacing:.4px;text-transform:uppercase;margin-bottom:12px}
+.comp-h2{font-size:22px;font-weight:900;color:var(--tx);margin-bottom:4px;line-height:1.2}
+.comp-sub{font-size:13px;color:var(--tx3);font-weight:700;margin-bottom:20px}
+
+.cl{list-style:none;margin-bottom:22px}
+.cl li{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--tx);padding:9px 0;border-bottom:1px solid var(--cr2)}
+.cl li:last-child{border-bottom:none}
+.ck{width:24px;height:24px;min-width:24px;background:var(--gr);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0}
+
+.preco-bloco{background:linear-gradient(135deg,var(--pud),var(--pu));border-radius:16px;padding:22px 20px;text-align:center;margin-bottom:16px}
+.preco-de{font-size:13px;color:rgba(255,255,255,.55);text-decoration:line-through;font-weight:700;margin-bottom:6px}
+.preco-val{display:flex;align-items:flex-start;justify-content:center;gap:2px;line-height:1;margin-bottom:6px}
+.preco-rs{font-size:24px;font-weight:900;color:var(--ye);margin-top:12px}
+.preco-num{font-size:72px;font-weight:900;color:var(--ye);letter-spacing:-2px}
+.preco-cents{font-size:24px;font-weight:900;color:var(--ye);margin-top:12px}
+.preco-obs{font-size:12px;color:rgba(255,255,255,.72);font-weight:700}
+
+.timer-titulo{font-size:13px;font-weight:900;color:var(--rd);text-align:center;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.timer-wrap{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+.timer-bloco{background:var(--rd);border-radius:10px;padding:10px 16px;min-width:66px;text-align:center;box-shadow:0 4px 16px rgba(239,68,68,.3)}
+.timer-num{font-size:34px;font-weight:900;color:#fff;line-height:1;display:block}
+.timer-label{font-size:10px;color:rgba(255,255,255,.75);font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.timer-sep{font-size:34px;font-weight:900;color:var(--rd);align-self:center;margin-bottom:14px}
+
+.btn-gr{display:block;width:100%;background:linear-gradient(135deg,#28d36b,var(--grd));color:#fff;font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;padding:18px 16px;border-radius:14px;border:none;cursor:pointer;text-align:center;box-shadow:0 6px 24px rgba(21,128,61,.45);transition:transform .15s;position:relative;overflow:hidden;letter-spacing:.2px}
+.btn-gr::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:brilho 2.5s ease-in-out infinite}
+@keyframes brilho{0%{left:-100%}60%,100%{left:150%}}
+.btn-gr:active{transform:scale(.97)}
+.btn-sub{display:block;font-size:11.5px;font-weight:700;opacity:.9;margin-top:3px}
+
+.selos{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--cr2)}
+.selo{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--tx3)}
+
+.sec-dor{background:#fff5f5;border-top:3px solid var(--rd);padding:36px 20px;text-align:center}
+.dor-h2{font-size:clamp(18px,4.5vw,22px);font-weight:900;color:var(--rd);margin-bottom:18px;line-height:1.3;max-width:var(--mx);margin-left:auto;margin-right:auto}
+.dor-lista{list-style:none;max-width:var(--mx);margin:0 auto 22px;text-align:left}
+.dor-lista li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:700;color:#4a1a1a;padding:11px 0;border-bottom:1px solid rgba(239,68,68,.1)}
+.dor-lista li:last-child{border-bottom:none}
+.dor-ico{font-size:20px;min-width:26px;margin-top:1px;flex-shrink:0}
+.dor-virada{background:linear-gradient(135deg,var(--or),var(--ord));color:#fff;font-size:15px;font-weight:800;padding:18px 20px;border-radius:14px;max-width:var(--mx);margin:0 auto;line-height:1.5}
+
+.sec-gar{padding:36px 20px;background:var(--cr)}
+.gar-box{max-width:var(--mx);margin:0 auto;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--gr);border-radius:20px;padding:26px 20px;text-align:center}
+.gar-ico{font-size:52px;margin-bottom:10px}
+.gar-box h2{font-size:21px;font-weight:900;color:var(--grd);margin-bottom:8px}
+.gar-box p{font-size:14px;color:#166534;font-weight:700;line-height:1.7}
+
+.sec-cta2{padding:36px 20px;background:var(--cr2);text-align:center}
+.sec-cta2 p{font-size:18px;font-weight:900;color:var(--tx);margin-bottom:8px;line-height:1.3}
+.sec-cta2 .sub2{font-size:13px;color:var(--tx3);font-weight:700;margin-bottom:20px}
+
+footer{background:#1A0E00;padding:24px 20px;text-align:center}
+footer p{font-size:11px;color:rgba(255,255,255,.35);line-height:2}
+footer a{color:rgba(255,255,255,.3);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="barra-rd">
+  <p>⚠️ A oferta básica por R$1,99 esgotou — mas temos algo melhor pra você</p>
+</div>
+
+<section class="hero">
+  <img class="logo" src="https://media.atomicatpages.net/u/T0j91F4gcwZKeP3YltbBeFZ1yh72/Pictures/RBPgtQ5755033.png" alt="Turminha Alfa Kids"/>
+  <div class="badge-esg">❌ Oferta básica encerrada por hoje</div>
+  <h1 class="h1">Infelizmente a Oferta básica <span class="rd">esgotou por hoje!</span></h1>
+  <p class="sub">Mas para te compensar, estamos liberando o <strong>PLANO COMPLETO</strong> — que custa R$97,00 — por um valor especial exclusivo para quem chegou até aqui.</p>
+  <div class="sep">
+    <div class="sep-l"></div>
+    <span class="sep-txt">🎁 compensação especial</span>
+    <div class="sep-l"></div>
+  </div>
+
+  <div class="card-comp">
+    <span class="comp-tag">⭐ Recomendado por Psicopedagogos</span>
+    <h2 class="comp-h2">PLANO COMPLETO! Kit Alfa Kids</h2>
+    <p class="comp-sub">Tudo que seu filho precisa para se alfabetizar de vez</p>
+    <ul class="cl">
+      <li><div class="ck">✓</div>Kit Alfa Kids — +2.750 Atividades</li>
+      <li><div class="ck">✓</div>Matemática</li>
+      <li><div class="ck">✓</div>Sílabas Simples e Complexas</li>
+      <li><div class="ck">✓</div>Coordenação Motora</li>
+      <li><div class="ck">✓</div>Vogais e Consciência Fonológica</li>
+      <li><div class="ck">✓</div>Consoantes</li>
+      <li><div class="ck">✓</div>Fonemas e Grafemas</li>
+      <li><div class="ck">✓</div>Silabário e seus Fonemas</li>
+      <li><div class="ck">✓</div>Formando Palavras</li>
+      <li><div class="ck">✓</div>Caligrafia Inicial</li>
+      <li><div class="ck">✓</div>🎁 Bônus 01 — Apostila de Português</li>
+      <li><div class="ck">✓</div>🎁 Bônus 02 — Frases e Textos</li>
+      <li><div class="ck">✓</div>🎁 Bônus 03 — Jogos Didáticos</li>
+      <li><div class="ck">✓</div>🎁 Bônus 04 — Grupo VIP de Atividades</li>
+      <li><div class="ck">✓</div>🎁 Bônus 05 — Surpresa Especial</li>
+      <li><div class="ck">✓</div>♾️ Acesso Vitalício</li>
+    </ul>
+    <div class="preco-bloco">
+      <p class="preco-de">de R$97,00</p>
+      <div class="preco-val">
+        <span class="preco-rs">R$</span>
+        <span class="preco-num">5</span>
+        <span class="preco-cents">,99</span>
+      </div>
+      <p class="preco-obs">Pagamento único · Acesso imediato no WhatsApp e e-mail</p>
+    </div>
+    <p class="timer-titulo">⏰ Essa oferta expira em:</p>
+    <div class="timer-wrap">
+      <div class="timer-bloco"><span class="timer-num" id="t-min">15</span><span class="timer-label">min</span></div>
+      <span class="timer-sep">:</span>
+      <div class="timer-bloco"><span class="timer-num" id="t-seg">00</span><span class="timer-label">seg</span></div>
+    </div>
+    <a href="LINK_CHECKOUT_599" class="btn-gr">
+      ✅ EU ACEITO ESSE DESCONTO!
+      <span class="btn-sub">👆 Acesso imediato · Garantia de 7 dias</span>
+    </a>
+    <div class="selos">
+      <div class="selo">🔒 Pagamento Seguro</div>
+      <div class="selo">⚡ Acesso Imediato</div>
+      <div class="selo">🛡️ 7 dias Garantia</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-dor">
+  <h2 class="dor-h2">Seu filho ainda precisa aprender a ler.<br>Não deixe mais um dia passar.</h2>
+  <ul class="dor-lista">
+    <li><span class="dor-ico">😟</span><span>Cada semana sem alfabetização cria um atraso maior na escola</span></li>
+    <li><span class="dor-ico">😓</span><span>Crianças que ficam para trás sofrem com falta de confiança e vergonha na sala de aula</span></li>
+    <li><span class="dor-ico">💸</span><span>Reforço escolar presencial pode custar R$300–R$800 por mês</span></li>
+    <li><span class="dor-ico">⏰</span><span>Com o Kit você começa hoje, em casa, sem precisar ser professora</span></li>
+    <li><span class="dor-ico">✅</span><span>Mais de 2.750 atividades para 2 a 11 anos, incluindo TDAH e necessidades especiais</span></li>
+  </ul>
+  <div class="dor-virada">
+    Por R$5,99 — menos que um café — seu filho tem acesso a um método completo criado por especialistas 👇
+  </div>
+</section>
+
+<section class="sec-gar">
+  <div class="gar-box">
+    <div class="gar-ico">🛡️</div>
+    <h2>SATISFAÇÃO GARANTIDA!</h2>
+    <p>Sabemos da qualidade do nosso material de Alfabetização, e por este motivo liberamos a <strong>garantia de 7 dias!</strong> Se neste período você utilizar nosso material e não gostar, basta entrar em contato para pedir o reembolso de 100% do valor investido. Sem burocracia, sem perguntas.</p>
+  </div>
+</section>
+
+<section class="sec-cta2">
+  <p>GARANTA A APOSTILA DE ALFABETIZAÇÃO COM DESCONTO!</p>
+  <p class="sub2">Enquanto ainda está disponível · Acesso imediato no WhatsApp e e-mail</p>
+  <a href="LINK_CHECKOUT_599" class="btn-gr" style="max-width:var(--mx);margin:0 auto">
+    ✅ EU ACEITO ESSE DESCONTO!
+    <span class="btn-sub">👆 Plano Completo por R$5,99 · Garantia 7 dias</span>
+  </a>
+</section>
+
+<footer>
+  <p>Copyright 2025 - Turminha Alfa Kids ® · Todos os direitos reservados.<br>
+  Este site não é afiliado ao Facebook ou Instagram.<br>
+  <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a></p>
+</footer>
+
+<script>
+var total=900;
+var mEl=document.getElementById('t-min'),sEl=document.getElementById('t-seg');
+var inv=setInterval(function(){
+  if(total<=0){clearInterval(inv);mEl.textContent='00';sEl.textContent='00';return;}
+  total--;
+  mEl.textContent=String(Math.floor(total/60)).padStart(2,'0');
+  sEl.textContent=String(total%60).padStart(2,'0');
+},1000);
+</script>
+</body>
+</html>
